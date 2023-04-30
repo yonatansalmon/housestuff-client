@@ -12,12 +12,7 @@ const Budget = () => {
       _id: '2',
       category: 'Utilities',
       amount: 150,
-    },
-    {
-      _id: '3',
-      category: 'Entertainment',
-      amount: 100,
-    },
+    }
   ]);
 
   useEffect(() => {
