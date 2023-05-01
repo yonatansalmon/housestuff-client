@@ -199,9 +199,9 @@ table tr:hover {
 /* Small screens */
 @media (max-width: 600px) {
   /* Hide the date column */
-  /* .third-column {
-    display: none;
-  } */
+  .second-column {
+    width: 10%;
+  }
   
   /* Reduce the font size and padding of the table headers */
   th {
@@ -259,5 +259,17 @@ table tr:hover {
   button {
     font-size: 1em;
     padding: 0.5em;
+  }
+}
+
+
+/* Small screens */
+
+
+/* Large screens */
+@media (max-width: 420px) {
+  /* Reset the width of the input fields */
+  input[type="text"], input[type="number"] {
+    width: 50%;
   }
 }

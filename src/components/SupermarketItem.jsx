@@ -34,7 +34,7 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
     <tr>
       <td className='first-column'>
         {editedItem ? (
-          <input value={inputValues.name} name="name" onChange={handleChange} />
+          <input value={inputValues.name} name="name" type='text' onChange={handleChange} />
         ) : (
           item.name
         )}
