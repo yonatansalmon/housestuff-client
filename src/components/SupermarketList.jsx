@@ -10,7 +10,7 @@ const SupermarketList = () => {
   useEffect(() => {
     const fetchListItems = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/supermarket-list');
+        const response = await axios.get(`${process.env.REACT_APP_BE_URL}/api/supermarket-list`);
         setListItems(response.data);
       } catch (err) {
         console.log(err);
@@ -22,7 +22,7 @@ const SupermarketList = () => {
 
   const handleAddItem = async (item) => {
     try {
-      const response = await axios.post('http://localhost:8080/api/supermarket-list', item);
+      const response = await axios.post(`${process.env.REACT_APP_BE_URL}/api/supermarket-list`, item);
       console.log(response.data)
       setListItems([...listItems, response.data]);
     } catch (err) {
@@ -32,7 +32,7 @@ const SupermarketList = () => {
 
   const handleDeleteItem = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:8080/api/supermarket-list/${id}`);
+      const response = await axios.delete(`${process.env.REACT_APP_BE_URL}/api/supermarket-list/${id}`);
       if (response.status === 200) {
         const newListItems = listItems.filter((item) => item._id !== id);
         setListItems(newListItems);
