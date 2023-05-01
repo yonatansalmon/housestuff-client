@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import SupermarketItem from './SupermarketItem';
-import  SupermarketForm  from './SupermarketForm';
+import SupermarketForm from './SupermarketForm';
 import axios from 'axios';
 
 const SupermarketList = () => {
@@ -22,7 +22,7 @@ const SupermarketList = () => {
   const handleAddItem = async (item) => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_BE_URL}/api/supermarket-list`, item);
-      console.log(response.data)
+      console.log(response.data);
       setListItems([...listItems, response.data]);
     } catch (err) {
       console.log(err);
@@ -36,6 +36,15 @@ const SupermarketList = () => {
         const newListItems = listItems.filter((item) => item._id !== id);
         setListItems(newListItems);
       }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleEditItem = async (id, updatedItem) => {
+    try {
+      const response = await axios.put(`${process.env.REACT_APP_BE_URL}/api/supermarket-list/${id}`, updatedItem);
+      setListItems(listItems.map((item) => (item._id === id ? response.data : item)));
     } catch (err) {
       console.log(err);
     }
@@ -55,7 +64,7 @@ const SupermarketList = () => {
         </thead>
         <tbody>
           {listItems.map((item) => (
-            <SupermarketItem key={item._id} item={item} onDeleteItem={handleDeleteItem} />
+            <SupermarketItem key={item._id} item={item} onDeleteItem={handleDeleteItem} onEditItem={handleEditItem} />
           ))}
         </tbody>
       </table>
