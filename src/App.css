@@ -189,3 +189,8 @@ table tr:hover {
   width: 33.33%;
   text-align: center;
 }
+
+.editQuantity {
+  width: 10%;
+  text-align: center;
+}

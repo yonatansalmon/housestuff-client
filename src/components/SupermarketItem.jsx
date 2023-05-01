@@ -41,7 +41,7 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
       </td>
       <td className='second-column'>
         {editedItem ? (
-          <input value={inputValues.quantity} name="quantity" type='number' onChange={handleChange} />
+          <input value={inputValues.quantity} name="quantity" type='number' className='editQuantity' onChange={handleChange} />
         ) : (
           `${item.quantity} x`
         )}
