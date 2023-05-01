@@ -194,3 +194,70 @@ table tr:hover {
   width: 10%;
   text-align: center;
 }
+
+
+/* Small screens */
+@media (max-width: 600px) {
+  /* Hide the date column */
+  /* .third-column {
+    display: none;
+  } */
+  
+  /* Reduce the font size and padding of the table headers */
+  th {
+    font-size: 0.8em;
+    padding: 0.2em;
+  }
+  
+  /* Reduce the font size and padding of the table cells */
+  td {
+    font-size: 0.8em;
+    padding: 0.2em;
+  }
+  
+  /* Adjust the form input sizes */
+  .smitem, .smamount {
+    width: 45%;
+    margin: 0.2em;
+    font-size: 0.8em;
+  }
+  
+  /* Reduce the button font size and padding */
+  button {
+    font-size: 0.8em;
+    padding: 0.2em;
+  }
+}
+
+/* Large screens */
+@media (min-width: 601px) {
+  /* Show the date column */
+  .third-column {
+    display: table-cell;
+  }
+  
+  /* Reset the font size and padding of the table headers */
+  th {
+    font-size: 1em;
+    padding: 0.5em;
+  }
+  
+  /* Reset the font size and padding of the table cells */
+  td {
+    font-size: 1em;
+    padding: 0.5em;
+  }
+  
+  /* Reset the form input sizes */
+  .smitem, .smamount {
+    width: 100%;
+    margin: 0.5em;
+    font-size: 1em;
+  }
+  
+  /* Reset the button font size and padding */
+  button {
+    font-size: 1em;
+    padding: 0.5em;
+  }
+}
