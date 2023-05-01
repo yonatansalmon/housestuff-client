@@ -46,6 +46,8 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
           `${item.quantity} x`
         )}
       </td>
+      <td className='third-column'>{new Date(item.date).toLocaleDateString()}</td> 
+
       <td>
         <button onClick={handleEditItem}>{editedItem ? 'Save' : 'Edit'}</button>
         <button onClick={handleDeleteItem}>Delete</button>

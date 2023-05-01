@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SupermarketForm = ({ onAddItem }) => {
-  const [item, setItem] = useState({ name: '', quantity: 1 });
+  const [item, setItem] = useState({ name: '', quantity: 1, date: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
