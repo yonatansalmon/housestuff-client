@@ -11,14 +11,15 @@ const SupermarketForm = ({ onAddItem }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItem(item);
-    setItem({ name: '', quantity: 0 });
+
+    setItem({ name: '', quantity: 1 });
   };
 
   return (
     <form onSubmit={handleSubmit} className='form'>
       <input type='text' name='name' value={item.name} onChange={handleChange} placeholder='Item' className='smitem' />
       <input type='number' name='quantity' value={item.quantity} onChange={handleChange} placeholder='Quantity' className='smamount' />
-      <button type='submit'>Add Item</button>
+      <button className="button-3">Add Item</button>
     </form>
   );
 };

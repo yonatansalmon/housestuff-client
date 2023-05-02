@@ -30,27 +30,32 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
     setInputValues({ ...inputValues, [name]: value });
   };
 
+  const getDate = () => {
+    const date = new Date(item.date);
+    const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
+    const formattedDate = date.toLocaleDateString(undefined, options);
+    return formattedDate;
+  };
+
   return (
     <tr>
-      <td className='first-column'>
-        {editedItem ? (
-          <input value={inputValues.name} name="name" type='text' onChange={handleChange} />
-        ) : (
-          item.name
-        )}
-      </td>
+      <td className='first-column'>{editedItem ? <input value={inputValues.name} name='name' type='text'   className='editName' onChange={handleChange} /> : item.name}</td>
       <td className='second-column'>
         {editedItem ? (
-          <input value={inputValues.quantity} name="quantity" type='number' className='editQuantity' onChange={handleChange} />
+          <input value={inputValues.quantity} name='quantity' type='number' className='editQuantity' onChange={handleChange} />
         ) : (
           `${item.quantity} x`
         )}
       </td>
-      <td className='third-column'>{new Date(item.date).toLocaleDateString()}</td> 
+      <td className='third-column'>{getDate()}</td>
 
-      <td>
-        <button onClick={handleEditItem}>{editedItem ? 'Save' : 'Edit'}</button>
-        <button onClick={handleDeleteItem}>Delete</button>
+      <td className='editDeleteBtn'>
+        <button onClick={handleEditItem} className={!editedItem ? 'button-4' : 'button-25'}>
+          {editedItem ? 'Save' : 'Edit'}
+        </button>
+        <button onClick={handleDeleteItem} className='button-44'>
+          Delete
+        </button>
       </td>
     </tr>
   );

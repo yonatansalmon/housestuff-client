@@ -22,7 +22,6 @@ const SupermarketList = () => {
   const handleAddItem = async (item) => {
     try {
       const response = await axios.post(`${process.env.REACT_APP_BE_URL}/api/supermarket-list`, item);
-      console.log(response.data);
       setListItems([...listItems, response.data]);
     } catch (err) {
       console.log(err);
@@ -52,17 +51,17 @@ const SupermarketList = () => {
 
   return (
     <>
-      <h1>Supermarket List</h1>
+      <h1 className='SuperMarket-List-Title'>Supermarket List</h1>
       <SupermarketForm onAddItem={handleAddItem} />
       <hr />
-      <table>
-        <thead>
+      <table className='SmTable'>
+        <thead className='SmTableHead'>
           <tr>
-            <th>Item</th>
-            <th>Quantity</th>
+            <th className='first-column'>Item</th>
+            <th className='second-column'>Quantity</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className='SmTableBody'>
           {listItems.map((item) => (
             <SupermarketItem key={item._id} item={item} onDeleteItem={handleDeleteItem} onEditItem={handleEditItem} />
           ))}
