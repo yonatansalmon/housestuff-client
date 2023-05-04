@@ -613,23 +613,43 @@ table tr:hover {
   text-align: center;
 }
 
+/* ------------------------------------------------------------------------------------------------------------------------- */
+.form {
+  display: flex;
+  align-items: center;
+  border: 1px solid beige;
+  padding: 0.5rem !important;
+}
+
+.inputsCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .plus {
-  background-color: green;
-  margin: 10rem 0
+  background-color: #2a8b2a;
+  margin: 10rem 0;
 }
 
 .minus {
- background-color: red;
+  background-color: #9b3939;
 }
 
-
-.plus, .minus {
+.plus,
+.minus {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  margin: 0.5rem;
+  row-gap: .2rem;
 }
 
-
+.transaction-type {
+  display: flex;
+  margin-left: 1rem;
+}
 
 .transaction-type label {
   display: inline-block;
@@ -637,11 +657,11 @@ table tr:hover {
   font-size: 14px;
 }
 
-.transaction-type input[type="radio"] {
+.transaction-type input[type='radio'] {
   display: none;
 }
 
-.transaction-type input[type="radio"] + label:before {
+.transaction-type input[type='radio'] + label:before {
   content: '';
   display: inline-block;
   width: 14px;
@@ -652,8 +672,62 @@ table tr:hover {
   vertical-align: middle;
 }
 
-.transaction-type input[type="radio"]:checked + label:before {
+.transaction-type input[type='radio']:checked + label:before {
   background-color: #007bff;
   border-color: #007bff;
 }
 
+.PlusLabel {
+  background-color: green;
+}
+
+.MinusLabel {
+  background-color: red;
+}
+
+.PlusLabel,
+.MinusLabel {
+  margin: 0;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  height: 100%;
+  cursor: pointer;
+}
+
+.form .AmountInput {
+  margin-right: 0;
+  width: 50%;
+}
+
+.TransactionInput {
+  margin: 0 0 0.5rem 0 !important;
+  padding: 0;
+}
+
+.TotalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Total {
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.EditSymb {
+  position: relative;
+  color: #1483ea;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.modal-content {
+  padding: 1rem;
+}
+
+.ChangeTotalBtn {
+  margin-top: 0.5rem;
+}

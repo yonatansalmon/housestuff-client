@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const BudgetItem = ({item}) => {
+const BudgetItem = ({ item }) => {
   return (
-    <tr key={item.id}>
-    <td>{item.category}</td>
-    <td>{item.amount}₪</td>
-    <td>Delete</td>
-  </tr>
-  )
-}
+    <>
+      <div>{item.category}</div>
+      <div>{item.amount}₪</div>
+      <div>&times;</div>
+    </>
+  );
+};
 
-export default BudgetItem
+export default BudgetItem;
