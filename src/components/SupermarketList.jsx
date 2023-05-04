@@ -65,7 +65,7 @@ const SupermarketList = () => {
         <thead className='SmTableHead'>
           <tr>
             <th className='first-column'>Item</th>
-            <th className='second-column'>Quantity</th>
+            <th className='second-column'>X</th>
           </tr>
         </thead>
         <tbody className='SmTableBody'>

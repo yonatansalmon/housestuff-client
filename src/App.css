@@ -150,7 +150,7 @@ body {
 }
 
 table {
-  width: 100%;
+  width: 75%;
   border-collapse: collapse;
   margin-bottom: 1rem;
 }
@@ -196,6 +196,11 @@ table tr:hover {
   /* Hide the date column */
   .second-column {
     width: 10%;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
   }
 
   /* Reduce the font size and padding of the table headers */
@@ -262,7 +267,7 @@ table tr:hover {
 @media (max-width: 500px) {
   .second-column {
     width: 15%;
-    padding: 0.2rem !important;
+    padding: 0.3rem !important
   }
 
   .first-column {

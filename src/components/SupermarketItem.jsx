@@ -43,7 +43,7 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
   return (
     <tr>
       <td className='first-column'>{item.name}</td>
-      <td className='second-column'>{item.quantity} x</td>
+      <td className='second-column'>{item.quantity}</td>
       <td className='third-column'>{getDate()}</td>
       <td className='Check'>
         <input type='checkbox' checked={checked} onChange={handleCheck}></input>
