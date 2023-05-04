@@ -1,4 +1,4 @@
-// SupermarketItem.js
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
@@ -7,6 +7,8 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
     name: item.name,
     quantity: item.quantity,
   });
+
+  const [checked, setChecked] = useState(item.checked || false);
 
   useEffect(() => {
     setInputValues({
@@ -18,16 +20,15 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
   const handleDeleteItem = () => {
     onDeleteItem(item._id);
   };
-  const handleEditItem = () => {
-    if (editedItem) {
-      onEditItem(item._id, inputValues);
-    }
-    setEditedItem(!editedItem);
-  };
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setInputValues({ ...inputValues, [name]: value });
+  const handleCheck = async () => {
+    setChecked(!checked);
+    try {
+      const response = await axios.put(`${process.env.REACT_APP_BE_URL}/api/supermarket-list/${item._id}`, { checked: !checked });
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const getDate = () => {
@@ -39,20 +40,13 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
 
   return (
     <tr>
-      <td className='first-column'>{editedItem ? <input value={inputValues.name} name='name' type='text'   className='editName' onChange={handleChange} /> : item.name}</td>
-      <td className='second-column'>
-        {editedItem ? (
-          <input value={inputValues.quantity} name='quantity' type='number' className='editQuantity' onChange={handleChange} />
-        ) : (
-          `${item.quantity} x`
-        )}
-      </td>
+      <td className='first-column'>{item.name}</td>
+      <td className='second-column'>{item.quantity} x</td>
       <td className='third-column'>{getDate()}</td>
-
+      <td className='Check'>
+        <input type='checkbox' checked={checked} onChange={handleCheck}></input>
+      </td>
       <td className='editDeleteBtn'>
-        <button onClick={handleEditItem} className={!editedItem ? 'button-4' : 'button-25'}>
-          {editedItem ? 'Save' : 'Edit'}
-        </button>
         <button onClick={handleDeleteItem} className='button-44'>
           Delete
         </button>
@@ -62,3 +56,15 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
 };
 
 export default SupermarketItem;
+
+// const handleEditItem = () => {
+//   if (editedItem) {
+//     onEditItem(item._id, inputValues);
+//   }
+//   setEditedItem(!editedItem);
+// };
+
+// const handleChange = (e) => {
+//  const { name, value } = e.target;
+//  setInputValues({ ...inputValues, [name]: value });
+// };
