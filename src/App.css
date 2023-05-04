@@ -200,7 +200,7 @@ table tr:hover {
   width: 100%; /* Set the width of the line to fit the length of the text */
   height: 2px; /* Adjust the height of the line */
   background-color: red; /* Set the color of the line */
-  transform: translateY(100%); /* Move the line up half the height of the text */
+  transform: translateY(50%); /* Move the line up half the height of the text */
 }
 
 .editQuantity {
@@ -612,3 +612,48 @@ table tr:hover {
   width: 10% !important;
   text-align: center;
 }
+
+
+.plus {
+  background-color: green;
+  margin: 10rem 0
+}
+
+.minus {
+ background-color: red;
+}
+
+
+.plus, .minus {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+.transaction-type label {
+  display: inline-block;
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+.transaction-type input[type="radio"] {
+  display: none;
+}
+
+.transaction-type input[type="radio"] + label:before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+.transaction-type input[type="radio"]:checked + label:before {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
