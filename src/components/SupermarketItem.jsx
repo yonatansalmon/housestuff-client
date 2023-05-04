@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 
 const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
   const [editedItem, setEditedItem] = useState(false);
+  const [checked, setChecked] = useState(item.checked || false);
+
   const [inputValues, setInputValues] = useState({
     name: item.name,
     quantity: item.quantity,
   });
-
-  const [checked, setChecked] = useState(item.checked || false);
 
   useEffect(() => {
     setInputValues({
@@ -36,13 +36,13 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
     const day = date.getDate();
     const month = date.getMonth() + 1; // Months are zero-indexed
     const year = date.getFullYear() % 100; // Get the last two digits of the year
-    const formattedDate = `${month}/${day}/${year}`;
+    const formattedDate = `${day}/${month}//${year}`;
     return formattedDate;
   };
 
   return (
     <tr>
-      <td className='first-column'>{item.name}</td>
+      <td className='first-column' style={{textDecoration: checked ? 'line-through' : 'none'}}>{item.name}</td>
       <td className='second-column'>{item.quantity}</td>
       <td className='third-column'>{getDate()}</td>
       <td className='Check'>

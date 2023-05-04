@@ -191,6 +191,10 @@ table tr:hover {
   text-align: center;
 }
 
+.smamount {
+  width: 20% !important;
+}
+
 /* Small screens */
 @media (max-width: 600px) {
   /* Hide the date column */

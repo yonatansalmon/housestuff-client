@@ -55,13 +55,6 @@ const SupermarketList = () => {
       <SupermarketForm onAddItem={handleAddItem} />
       <hr />
       <table className='SmTable'>
-      <colgroup>
-    <col class="col-first-column" />
-    <col class="col-second-column" />
-    <col class="col-third-column" />
-    <col class="col-check" />
-    <col class="col-edit-delete-btn" />
-  </colgroup>
         <thead className='SmTableHead'>
           <tr>
             <th className='first-column'>Item</th>
