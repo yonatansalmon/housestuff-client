@@ -42,7 +42,7 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
 
   return (
     <tr>
-      <td className='first-column' style={{textDecoration: checked ? 'line-through' : 'none'}}>{item.name}</td>
+      <td  className={checked ? 'first-column line-through ' : 'first-column'}><span>{item.name}</span></td>
       <td className='second-column'>{item.quantity}</td>
       <td className='third-column'>{getDate()}</td>
       <td className='Check'>

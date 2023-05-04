@@ -179,11 +179,28 @@ table tr:hover {
 .first-column {
   width: 66.67%;
   text-align: center;
+  font-size: 1.2rem;
 }
 
 .second-column {
   width: 10%;
   text-align: center;
+}
+
+.first-column.line-through span {
+  position: relative;
+}
+
+.first-column.line-through span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%; /* Center the line vertically */
+  left: 0;
+  width: 100%; /* Set the width of the line to fit the length of the text */
+  height: 2px; /* Adjust the height of the line */
+  background-color: red; /* Set the color of the line */
+  transform: translateY(100%); /* Move the line up half the height of the text */
 }
 
 .editQuantity {
@@ -193,6 +210,46 @@ table tr:hover {
 
 .smamount {
   width: 20% !important;
+}
+
+.smitem,
+.smamount {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0.5rem;
+  transition: border-color 0.3s ease;
+}
+
+.smitem:focus,
+.smamount:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.smitem {
+  width: 20%;
+  margin-right: 0.5rem;
+}
+
+.smamount {
+  margin: 0 1rem;
+  width: 10%;
+}
+
+.button-3 {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.button-3:hover {
+  background-color: #0056b3;
 }
 
 /* Small screens */
@@ -271,7 +328,7 @@ table tr:hover {
 @media (max-width: 500px) {
   .second-column {
     width: 15%;
-    padding: 0.3rem !important
+    padding: 0.3rem !important;
   }
 
   .first-column {
