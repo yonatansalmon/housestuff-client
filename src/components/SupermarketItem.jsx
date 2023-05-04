@@ -33,8 +33,10 @@ const SupermarketItem = ({ item, onDeleteItem, onEditItem }) => {
 
   const getDate = () => {
     const date = new Date(item.date);
-    const options = { day: 'numeric', month: 'numeric', year: 'numeric' };
-    const formattedDate = date.toLocaleDateString(undefined, options);
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Months are zero-indexed
+    const year = date.getFullYear() % 100; // Get the last two digits of the year
+    const formattedDate = `${month}/${day}/${year}`;
     return formattedDate;
   };
 

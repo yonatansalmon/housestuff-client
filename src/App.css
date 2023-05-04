@@ -182,7 +182,7 @@ table tr:hover {
 }
 
 .second-column {
-  width: 33.33%;
+  width: 10%;
   text-align: center;
 }
 
@@ -266,7 +266,7 @@ table tr:hover {
   }
 
   .first-column {
-    width: 25%;
+    width: 40%;
     padding: 0.3rem !important;
   }
 }
@@ -278,27 +278,36 @@ table tr:hover {
     width: 90%;
   }
   .smamount {
-    width: 10%;
+    width: 20%;
   }
 
-td.editDeleteBtn {
-  display: flex;
-  align-items: stretch;
-  padding: 0 !important;
-}
+  td.editDeleteBtn {
+    display: flex;
+    align-items: stretch;
+    padding: 0 !important;
+    border: 0;
+    height: 100%;
+    margin: 0.4rem;
+  }
 
-td.editDeleteBtn > button {
-  flex: 1;
-}
+  .button-44 {
+    height: 100%;
+    margin: 0.1rem;
+    border-radius: 10px;
+  }
 
-.btn-submit {
-  background-color: lightgreen;
-}
+  td.editDeleteBtn > button {
+    flex: 1;
+  }
 
-.SmTableBody > tr,
-.SmTableBody td {
-  height: 100%;
-}
+  .btn-submit {
+    background-color: lightgreen;
+  }
+
+  .SmTableBody > tr,
+  .SmTableBody td {
+    height: 100%;
+  }
 }
 
 /* CSS */
@@ -532,4 +541,8 @@ td.editDeleteBtn > button {
 .Check {
   white-space: nowrap;
   padding: 0.2rem !important;
+}
+.second-column {
+  width: 10% !important;
+  text-align: center;
 }
